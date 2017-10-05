@@ -1,120 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.parth.scars_dice.MainActivity">
+
+
     <TextView
-        android:id="@+id/yourscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Your Score :"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="22dp" />
+        android:id="@+id/yourScoreLable"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/dis_yourscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="5dp"
-        android:layout_toRightOf="@id/yourscore"
-        />
+        android:id="@+id/yourScoreValue"
+        android:layout_marginLeft="7dp"
+        android:layout_marginStart="7dp"
+        android:layout_alignTop="@+id/yourScoreLable"
+        android:layout_toRightOf="@+id/yourScoreLable"
+        android:layout_toEndOf="@+id/yourScoreLable"
+        android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/computerscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Computer Score :"
-        android:layout_toRightOf="@id/dis_yourscore"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="5dp"
-        />
+        android:id="@+id/computerScoreLable"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/computerScoreValue"
+        android:layout_toStartOf="@+id/computerScoreValue"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:textColor="#000000" />
 
     <TextView
-        android:id="@+id/dis_computerscore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/computerscore"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="5dp"
         android:text="0"
-        />
+        android:id="@+id/computerScoreValue"
+        android:textColor="#000000"
+        android:layout_alignBaseline="@+id/computerScoreLable"
+        android:layout_alignBottom="@+id/computerScoreLable"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOLD"
+        android:id="@+id/holdButton"
+        android:layout_alignBottom="@+id/rollButton"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:id="@+id/resetButton"
+        android:layout_alignBottom="@+id/holdButton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your Turn Score :"
+        android:id="@+id/yourTurnScoreLable"
+        android:layout_marginTop="35dp"
+        android:textColor="#000000"
+        android:layout_below="@+id/rollButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/yourTurnScoreValue"
+        android:textColor="#000000"
+
+        android:layout_alignBaseline="@+id/yourTurnScoreLable"
+        android:layout_alignBottom="@+id/yourTurnScoreLable"
+        android:layout_toLeftOf="@+id/holdButton"
+        android:layout_toStartOf="@+id/holdButton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Computer Current Score :"
+        android:id="@+id/compTurnScoreLable"
+        android:layout_alignTop="@+id/yourTurnScoreValue"
+        android:layout_alignRight="@+id/computerScoreLable"
+        android:layout_alignEnd="@+id/computerScoreLable"
+        android:textColor="#000000" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/compTurnScoreValue"
+        android:layout_alignBaseline="@+id/compTurnScoreLable"
+        android:layout_alignBottom="@+id/compTurnScoreLable"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textColor="#000000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Roll"
+        android:id="@+id/rollButton"
+        android:allowUndo="true"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/diceView"
+        android:layout_alignRight="@+id/yourScoreValue"
+        android:layout_alignEnd="@+id/yourScoreValue" />
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/diceView"
         android:src="@drawable/dice1"
-        android:layout_marginLeft="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_below="@id/computerscore"
-        />
-
-    <Button
-        android:layout_marginTop="15dp"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/imageView"
-        android:id="@+id/roll"
-        android:layout_marginLeft="25dp"
-        android:text="ROLL"/>
-
-    <Button
-        android:layout_marginTop="15dp"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_below="@id/imageView"
-        android:id="@+id/hold"
-        android:layout_toRightOf="@id/roll"
-        android:layout_marginLeft="25dp"
-        android:text="HOLD"/>
-
-    <Button
-        android:layout_marginTop="15dp"
-        android:layout_width="80dp"
-        android:layout_height="50dp"
-        android:layout_toRightOf="@id/hold"
-        android:layout_below="@id/imageView"
-        android:id="@+id/reset"
-        android:layout_marginLeft="25dp"
-        android:text="RESET"/>
-
-    <TextView
-        android:layout_marginLeft="15dp"
-        android:layout_below="@id/roll"
-        android:id="@+id/current_score_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Your current score="/>
-
-    <TextView
-        android:layout_below="@id/roll"
-        android:layout_toRightOf="@id/current_score_user"
-        android:id="@+id/dis_current_score_user"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"/>
-
-    <TextView
-        android:layout_marginLeft="15dp"
-        android:layout_below="@id/current_score_user"
-        android:id="@+id/current_score_computer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Computer current score="/>
-
-    <TextView
-        android:layout_below="@id/current_score_user"
-        android:layout_toRightOf="@id/current_score_computer"
-        android:id="@+id/dis_current_score_computer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"/>
+        android:layout_marginTop="33dp"
+        android:layout_below="@+id/computerScoreLable"
+        android:layout_centerHorizontal="true" />
 
 
 </RelativeLayout>
